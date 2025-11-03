@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq #CLASE 7 
 
 #Clase 6 
-st.set_page_config(page_title="Mi Chat De IA", layout="centered",page_icon="🦌")
+st.set_page_config(page_title="Mi Chat De IA", layout="centered",page_icon="😎")
 st.title("Primer app Andres con streamlit. ")
 nombre=st.text_input("¿Cual es tu nombre")
 if st.button("saludar"): 
@@ -69,13 +69,14 @@ def main():
     areahistorial()
     mensaje = st.chat_input("escribi tu mensaje")
     if mensaje: 
-        actualizarhistorial("user", mensaje, "🙍‍♂️")
+        actualizarhistorial("user", mensaje, "😎")
         chatcompleto= configurar_modelo(clienteusuario,elegirmodelo,mensaje)
         if chatcompleto:
             with st.chat_message("assistant"):
                 chatcompleto=st.write_stream(generarRespuesta(chatcompleto))
-                actualizarhistorial("assistant",chatcompleto,"")
+                actualizarhistorial("assistant",chatcompleto,"🤖")
     st.rerun()
 if __name__== "__main__":
     main()
+
 
